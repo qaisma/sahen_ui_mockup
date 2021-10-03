@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://sahenapi.azurewebsites.net",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}

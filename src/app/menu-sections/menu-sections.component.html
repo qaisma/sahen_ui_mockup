@@ -1,0 +1,27 @@
+<mat-card class="section-card" *ngFor="let section of sections">
+    <mat-card-header>
+        <mat-card-title>{{section.sectionName}}</mat-card-title>
+        <img src="{{section.logoUri}}" *ngIf="section.logoUri">
+        <i class="gg-bowl" *ngIf="!section.logoUri"></i>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <mat-card *ngFor="let dish of section.menuItems" class="dish-card" [routerLink]="['/item', dish.id]">
+                <mat-card-header>
+                    <mat-card-title>{{dish.itemName}}</mat-card-title>
+                    <mat-card-subtitle *ngIf="dish.description">{{dish.description}}</mat-card-subtitle>
+                    <mat-card-subtitle *ngIf="dish.price">{{dish.price | currency:'AED'}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <img mat-card-image class="dish-menu-img" src="{{dish.imageUri}}" alt="{{dish.itemName}}">
+                </mat-card-content>
+                <mat-card-actions class="mat-card-actions">
+                    <mat-icon (click)="addToCart(dish)" color="primary">add_shopping_cart</mat-icon>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>View All</button>
+    </mat-card-actions>
+</mat-card>
