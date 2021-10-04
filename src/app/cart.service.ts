@@ -21,7 +21,7 @@ export class CartService {
 
     addToCart(menuSectionItem: RestaurantMenuSectionItem) {
         let cartItem = new CartItem();
-        cartItem.itemId = menuSectionItem.id;
+        cartItem.itemId = menuSectionItem.id.toString();
         cartItem.quantity = 1;
         this.cart.items.push(cartItem);
     }

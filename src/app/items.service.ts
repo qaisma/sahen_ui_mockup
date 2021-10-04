@@ -4,8 +4,9 @@ import { ApiPaths } from './api-paths';
 import { environment } from '../environments/environment';
 import { Restaurant } from './models/restaurant.model';
 import { CartItem, Cart } from './models/cart.model';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { RestaurantMenuSectionItem } from './models/restaurant-menu-section-item.model';
+import { localRestaurant } from './sample.data'
 
 @Injectable({
     providedIn: 'root'
@@ -60,7 +61,9 @@ export class ItemsService {
     }
 
     getRestaurant(): Observable<Restaurant> {
-        return this.http.get<Restaurant>(this.baseUrl + ApiPaths.getRestaurantMenu);
+        // return this.http.get<Restaurant>("sample.data.json");
+        return of(localRestaurant);
+        // return this.http.get<Restaurant>(this.baseUrl + ApiPaths.getRestaurantMenu);
     }
 
     // addToCart(product: Product) {

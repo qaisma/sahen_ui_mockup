@@ -1,8 +1,10 @@
 import { RestaurantMenuSectionItem } from "./restaurant-menu-section-item.model";
 
 export class RestaurantMenuSectionModel {
-    menuId: string = "";
+    id: number | undefined;
+    menuId: string | number = "";
     sectionName: string = "";
-    logoUri: string = "";
-    menuItems:Array<RestaurantMenuSectionItem>=[];
+    logoUri: string | undefined | null;
+    menuItems: Array<RestaurantMenuSectionItem> = [];
+    sort: number | undefined;
 }

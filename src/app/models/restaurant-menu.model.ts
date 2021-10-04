@@ -1,13 +1,16 @@
 import { RestaurantMenuSectionModel } from "./restaurant-menu-section.model";
 
 export class RestaurantMenuModel {
-    id: string = "";
-    name: string = "";
+    id: string | number = "";
+    menuName: string = "";
     menuSections: Array<RestaurantMenuSectionModel> = [];
+    chainId: number | undefined;
+    
+    restaurants: Array<any> = []
 
     constructor() {
         this.id = ''
-        this.name = ''
+        this.menuName = ''
         this.menuSections = []
     }
 }

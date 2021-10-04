@@ -1,0 +1,637 @@
+import { Restaurant } from "./models/restaurant.model"
+
+export const localRestaurant: Restaurant = {
+  id: 1,
+  orderId: 2,
+  changeUserId: null,
+  chainName: "KFC",
+  logoUri: "https://upload.wikimedia.org/wikipedia/sco/thumb/b/bf/KFC_logo.svg/1024px-KFC_logo.svg.png                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ",
+  changeUser: null,
+  menus: [
+    {
+      id: 2,
+      chainId: 1,
+      menuName: "Menu 1",
+      menuSections: [
+        {
+          id: 12,
+          menuId: 2,
+          sectionName: "Deals",
+          logoUri: null,
+          sort: 1,
+          menuItems: [
+            {
+              id: 1,
+              sectionId: 12,
+              itemName: "ZINGER BLAZE BOX",
+              description: "Zinger Blaze + 1 COB + Waffle Fries + Coleslaw + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000178.jpg",
+              price: 38,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 2,
+              sectionId: 12,
+              itemName: "ZINGER BLAZE COMBO",
+              description: "Zinger Blaze + Waffle Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000177.jpg",
+              price: 31,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 3,
+              sectionId: 12,
+              itemName: "DOUBLE BUCKET",
+              description: "24 pieces chicken, Family Fries, Large Coleslaw, 2.25 L drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000126.jpg",
+              price: 135,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 4,
+              sectionId: 12,
+              itemName: "MIGHTY TWIST",
+              description: "Mighty Zinger + Twister + Fries + Pepsi",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000067.jpg",
+              price: 25,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 5,
+              sectionId: 12,
+              itemName: "SUPER DINNER MEAL",
+              description: "4pcs Chicken + Fries + Coleslaw + Bun + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000008.jpg",
+              price: 32.5,
+              isFeatured: true,
+              orderLines: []
+            },
+            {
+              id: 6,
+              sectionId: 12,
+              itemName: "SUPER MEGA DEAL",
+              description: "12 pcs COB + Family  Fries + 3 buns + Large Coleslaw",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000151.jpg",
+              price: 59,
+              isFeatured: true,
+              orderLines: []
+            }
+          ]
+        },
+        {
+          id: 13,
+          menuId: 2,
+          sectionName: "For One",
+          logoUri: null,
+          sort: 2,
+          menuItems: [
+            {
+              id: 7,
+              sectionId: 13,
+              itemName: "ZINGER BLAZE BOX",
+              description: "Zinger Blaze + 1 COB + Waffle Fries + Coleslaw + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000178.jpg",
+              price: 38,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 8,
+              sectionId: 13,
+              itemName: "ZINGER BLAZE COMBO",
+              description: "Zinger Blaze + Waffle Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000177.jpg",
+              price: 31,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 9,
+              sectionId: 13,
+              itemName: "ZINGER BLAZE",
+              description: "ZINGER BLAZE",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110047.jpg",
+              price: 20,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 10,
+              sectionId: 13,
+              itemName: "GAMER'S BOX",
+              description: "Mighty Zinger Sandwich + Fries + Drink + Cookie",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000137.jpg",
+              price: 32,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 11,
+              sectionId: 13,
+              itemName: "SUPER DINNER MEAL",
+              description: "4pcs Chicken + Fries + Coleslaw + Bun + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000008.jpg",
+              price: 32.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 12,
+              sectionId: 13,
+              itemName: "DINNER CRISPY STRIPS MEAL",
+              description: "4pcs Strips + Fries + Coleslaw + 2 Sauces + Bun + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000211.jpg",
+              price: 28,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 13,
+              sectionId: 13,
+              itemName: "DINNER MEAL",
+              description: "3pcs Chicken + Fries + Coleslaw + Bun + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000015.jpg",
+              price: 28,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 14,
+              sectionId: 13,
+              itemName: "CHICKEN RICE MEAL",
+              description: "2pcs Chicken + Rice + 1 Sauce + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000216.jpg",
+              price: 27,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 15,
+              sectionId: 13,
+              itemName: "MIGHTY ZINGER BOX",
+              description: "Mighty Zinger Sandwich + 1pc Chicken + Fries + Coleslaw + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000069.jpg",
+              price: 35,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 16,
+              sectionId: 13,
+              itemName: "TWISTER BOX",
+              description: "Twister Sandwich + 1pc Chicken + Fries + Coleslaw + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000068.jpg",
+              price: 25,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 17,
+              sectionId: 13,
+              itemName: "SUPREME BOX",
+              description: "Supreme Sandwich + Pc Chicken + Regular Coleslaw + Regular Fries + Regular Soft Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000131.jpg",
+              price: 33,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 18,
+              sectionId: 13,
+              itemName: "ZINGER BOX",
+              description: "Zinger Sandwich + 1pc Chicken + Fries + Coleslaw + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000070.jpg",
+              price: 30.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 19,
+              sectionId: 13,
+              itemName: "MIGHTY ZINGER MEAL",
+              description: "Mighty Zinger Sandwich + Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000049.jpg",
+              price: 27.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 20,
+              sectionId: 13,
+              itemName: "SUPREME MEAL",
+              description: "Supreme Sandwich, fries & drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000080.jpg",
+              price: 26.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 21,
+              sectionId: 13,
+              itemName: "TWISTER MEAL",
+              description: "Twister Sandwich + Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000029.jpg",
+              price: 18,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 22,
+              sectionId: 13,
+              itemName: "ZINGER MEAL",
+              description: "Zinger Sandwich + Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000045.jpg",
+              price: 23,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 23,
+              sectionId: 13,
+              itemName: "TWISTER MAX MEAL",
+              description: "Twister Max Sandwich + Fries + Drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000057.jpg",
+              price: 27.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 24,
+              sectionId: 13,
+              itemName: "TWISTER MAX SANDWICH - SPICY",
+              description: "Chicken breast fillet, 2 pcs. of nacho cheese, sliced tomatoes lettuce, cheese & pepper mayo in ",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110014.jpg",
+              price: 17,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 25,
+              sectionId: 13,
+              itemName: "TWISTER MAX SANDWICH - ORIGINAL",
+              description: "Chicken breast fillet, 2 pcs. of nacho cheese, sliced tomatoes lettuce, cheese & pepper mayo in",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110018.jpg",
+              price: 17,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 26,
+              sectionId: 13,
+              itemName: "TWISTER SANDWICH - SPICY",
+              description: "Two pieces of crispy chicken strips with KFC’s Spicy Zinger Recipe, diced tomatoes, fresh lettuce a",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110002.jpg",
+              price: 9,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 27,
+              sectionId: 13,
+              itemName: "TWISTER SANDWICH - ORIGINAL",
+              description: "Two pieces of crispy chicken strips, diced tomatoes, fresh lettuce and pepper mayonnaise. All wrappe",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110003.jpg",
+              price: 9,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 28,
+              sectionId: 13,
+              itemName: "MIGHTY ZINGER",
+              description: "2 chicken breast fillets with KFC’s Spicy Zinger Recipe, cheese, lettuce, spicy mayo in a round bun",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110005.jpg",
+              price: 18,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 29,
+              sectionId: 13,
+              itemName: "ZINGER SUPREME",
+              description: "Chicken breast fillet with KFC’s (original or Spicy) Recipe, covered in melted cheddar cheese, fresh",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110009.jpg",
+              price: 16,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 30,
+              sectionId: 13,
+              itemName: "FILLET SUPREME",
+              description: "Chicken breast fillet with KFC’s (original or Spicy) Recipe, covered in melted cheddar cheese, fresh",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110008.jpg",
+              price: 16,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 31,
+              sectionId: 13,
+              itemName: "ZINGER SANDWICH",
+              description: "Chicken Zinger, mayo, lettuce. A true classic",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm110001.jpg",
+              price: 15,
+              isFeatured: false,
+              orderLines: []
+            }
+          ]
+        },
+        {
+          id: 14,
+          menuId: 2,
+          sectionName: "For Sharing",
+          logoUri: null,
+          sort: 3,
+          menuItems: [
+            {
+              id: 32,
+              sectionId: 14,
+              itemName: "21 PCS SUPER BUCKET",
+              description: "21 chicken pcs + 5 crispy strips + 2 family fries + 2 family coleslaw + bun + 2.25 L drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000087.jpg",
+              price: 139,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 33,
+              sectionId: 14,
+              itemName: "15 PCS SUPER BUCKET",
+              description: "15 chicken pcs + 5 crispy strips + 1 family fries + 1 family coleslaw +  bun + 2.25 L drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000088.jpg",
+              price: 104,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 34,
+              sectionId: 14,
+              itemName: "9 PCS SUPER BUCKET",
+              description: "9 chicken pcs + 5 crispy strips + 1 family fries + 1 family coleslaw +  bun + 1 L drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000089.jpg",
+              price: 79,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 35,
+              sectionId: 14,
+              itemName: "BUCKET 21 PCS",
+              description: "21 chicken pcs. + 2 family size coleslaw + 2 family size fries + bun + 2.25 liters drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000086.jpg",
+              price: 129,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 36,
+              sectionId: 14,
+              itemName: "BUCKET 15 PCS",
+              description: "15 chicken pcs. + family size coleslaw + family size fries + bun + 2.25 liters drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000085.jpg",
+              price: 94,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 37,
+              sectionId: 14,
+              itemName: "BUCKET 9 PCS",
+              description: "9 chicken pcs. + family size coleslaw + family size fries + bun + 1 liter drink",
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000084.jpg",
+              price: 69,
+              isFeatured: false,
+              orderLines: []
+            }
+          ]
+        },
+        {
+          id: 15,
+          menuId: 2,
+          sectionName: "Sides & Desserts",
+          logoUri: null,
+          sort: 4,
+          menuItems: [
+            {
+              id: 38,
+              sectionId: 15,
+              itemName: "WAFFLE FRIES",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000140.jpg",
+              price: 10,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 39,
+              sectionId: 15,
+              itemName: "LOADED FRIES FAMILY",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000048.jpg",
+              price: 18.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 40,
+              sectionId: 15,
+              itemName: "FRIES",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000056.jpg",
+              price: 9,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 41,
+              sectionId: 15,
+              itemName: "SPICY FRIES",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000082.jpg",
+              price: 10,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 42,
+              sectionId: 15,
+              itemName: "POP CORN CHICKEN",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000027.jpg",
+              price: 8.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 43,
+              sectionId: 15,
+              itemName: "RIZO",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000060.jpg",
+              price: 11.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 44,
+              sectionId: 15,
+              itemName: "DYNAMITE SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm810028.jpg",
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 45,
+              sectionId: 15,
+              itemName: "COLONEL'S SIGNATURE SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm810040.jpg",
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 46,
+              sectionId: 15,
+              itemName: "GARLIC SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm810041.jpg",
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 47,
+              sectionId: 15,
+              itemName: "BBQ SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm810042.jpg",
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 48,
+              sectionId: 15,
+              itemName: "SWEET CHILLI SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm816003.jpg",
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 49,
+              sectionId: 15,
+              itemName: "CHEDDAR SAUCE",
+              description: null,
+              imageUri: null,
+              price: 2,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 50,
+              sectionId: 15,
+              itemName: "GRAVY SAUCE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm5000029.jpg",
+              price: 4,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 51,
+              sectionId: 15,
+              itemName: "COLESLAW",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000009.jpg",
+              price: 7.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 52,
+              sectionId: 15,
+              itemName: "CHOCOLATE CAKE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm710002.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 53,
+              sectionId: 15,
+              itemName: "COOKIE",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm710003.jpg",
+              price: 5.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 54,
+              sectionId: 15,
+              itemName: "DIET PEPSI",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000005.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 55,
+              sectionId: 15,
+              itemName: "7 UP",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000006.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 56,
+              sectionId: 15,
+              itemName: "PEPSI",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000001.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 57,
+              sectionId: 15,
+              itemName: "MIRINDA",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000008.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            },
+            {
+              id: 58,
+              sectionId: 15,
+              itemName: "MOUNTAIN DEW",
+              description: null,
+              imageUri: "https://uae.kfc.me/Images/ItemsImages/Menu17/itm000007.jpg",
+              price: 9.5,
+              isFeatured: false,
+              orderLines: []
+            }
+          ]
+        }
+      ],
+      restaurants: []
+    }
+  ],
+  restaurants: []
+}
