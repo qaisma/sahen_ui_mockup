@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
+import { AppComponent } from "./app.component";
 import { ItemsService } from "./items.service";
 import { Restaurant } from "./models/restaurant.model";
 
@@ -12,7 +13,7 @@ export class RestaurantResolver implements Resolve<Restaurant> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> | Promise<any> | any {
-    return this.service.getRestaurant();
+    return this.service.restaurant;
     // return this.service.getRestaurant(route.paramMap.get('id'));
   }
 }

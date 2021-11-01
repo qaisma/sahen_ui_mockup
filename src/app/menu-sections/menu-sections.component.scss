@@ -1,3 +1,58 @@
-.dish-menu-img {
-    // width: 15em;
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.dishes-container {
+    .dish-item {
+        overflow: hidden;
+        float   : left;
+
+        .mat-divider {
+            margin: 10pt 0;
+        }
+
+        .dish-image {
+            width        : 20%;
+            float        : left;
+            text-align   : center;
+            border-radius: 3px;
+            padding      : 5px;
+            position     : relative;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .dish-content {
+            float: left;
+            width: 75%;
+
+            .dish-info {
+                width: 75%;
+                float: left;
+
+                .dish-name {
+                    font-weight   : bold;
+                    padding-bottom: 3pt;
+                }
+            }
+
+            .dish-price {
+                width     : 25%;
+                float     : left;
+                text-align: center;
+
+                .btn-add-cart {
+                    position  : relative;
+                    left      : 10%;
+                    margin-top: 25%;
+                }
+
+                // mat-icon {
+                //     line-height: 50pt;
+                // }
+            }
+        }
+    }
 }

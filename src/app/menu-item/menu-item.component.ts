@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../items.service';
-import { RestaurantMenuSectionItem } from '../models/restaurant-menu-section-item.model';
+import { MenuItem } from '../models/restaurant.model';
 
 @Component({
   selector: 'app-menu-item',
@@ -10,22 +10,22 @@ import { RestaurantMenuSectionItem } from '../models/restaurant-menu-section-ite
 })
 export class MenuItemComponent implements OnInit {
 
-  dish: RestaurantMenuSectionItem;
+  dish: MenuItem;
 
   constructor(
     private route: ActivatedRoute,
     private itemsService: ItemsService) {
-    this.dish = new RestaurantMenuSectionItem();
+    this.dish = new MenuItem();
   }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const dishId = routeParams.get('id') || '';
 
-    this.dish = this.itemsService.getMenuSectionItem(dishId);
+    this.dish = this.itemsService.getMenuSectionItem(parseInt(dishId));
   }
 
-  addToCart(dish: RestaurantMenuSectionItem): void {
+  addToCart(dish: MenuItem): void {
     window.alert('Dish has been added to cart!');
   }
 

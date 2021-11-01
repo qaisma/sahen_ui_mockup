@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../items.service';
-import { Restaurant } from '../models/restaurant.model';
+import { CartService } from '../cart.service';
+import { MenuItem, Restaurant } from '../models/restaurant.model';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,20 +10,26 @@ import { Restaurant } from '../models/restaurant.model';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
+  public shoppingCartItems$: Observable<MenuItem[]> = of([]);
+  public shoppingCartItems: MenuItem[] = [];
 
-  restaurant: Restaurant
+  restaurant: Restaurant = new Restaurant();;
+  totalCount = 0;
 
   constructor(
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
+    private cartService: CartService,
   ) {
-    this.restaurant = new Restaurant();
+    this.totalCount = cartService.totalCount;
+    this.shoppingCartItems$ = this.cartService.getItems();
+
+    this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
   }
 
   ngOnInit(): void {
-    this.itemsService.getRestaurant().subscribe(res => {
-      this.restaurant = res;
-    });
-    // this.restaurant = this.itemsService.restaurant;
+    this.restaurant = this.itemsService.restaurant;
   }
-
+  getTotalCount(): number {
+    return this.shoppingCartItems$ ? this.shoppingCartItems.length : 0;
+  }
 }

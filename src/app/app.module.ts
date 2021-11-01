@@ -18,6 +18,10 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RestaurantResolver } from './restaurant-seolver';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -36,6 +40,9 @@ import { RestaurantResolver } from './restaurant-seolver';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatExpansionModule,
+    MatBadgeModule,
+    MatButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -50,7 +57,12 @@ import { RestaurantResolver } from './restaurant-seolver';
         }
       },
       { path: 'item/:id', component: MenuItemComponent },
-      { path: 'cart', component: CartComponent }
+      {
+        path: 'cart', component: CartComponent,
+        resolve: {
+          restaurant: RestaurantResolver
+        }
+      }
     ])
   ],
   providers: [ItemsService, CartService],

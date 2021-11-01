@@ -1,18 +1,29 @@
-import { RestaurantMenuModel } from "./restaurant-menu.model";
-
 export class Restaurant {
-    chainName: string = "";
-    logoUri: string = "";
-    menus: Array<RestaurantMenuModel> = [];
-    id: number | undefined;
-    orderId: number | undefined;
-    changeUserId: number | null | undefined;
-    changeUser: any;
-    restaurants: Array<any> = [];
+    RestaurantChain: RestaurantChain = new RestaurantChain();
+    Menu: Menu = new Menu();
+}
 
-    constructor() {
-        this.chainName = ""
-        this.menus = []
-        this.logoUri = ""
-    }
+export class Menu {
+    MenuSections: MenuSection[] = [];
+}
+
+export class MenuSection {
+    SectionName: string = '';
+    LogoUri: string = '';
+    Sort: number = -1;
+    MenuItems: MenuItem[] = [];
+}
+
+export class MenuItem {
+    Id: number = -1;
+    ItemName: string = '';
+    Description: null | string = null;
+    ImageUri: string = '';
+    Price: number = -1;
+    IsFeatured: number | null = null;
+}
+
+export class RestaurantChain {
+    ChainName: string = '';
+    LogoUri: string = '';
 }

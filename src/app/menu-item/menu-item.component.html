@@ -1,11 +1,11 @@
 <mat-card class="dish-card">
     <mat-card-header>
-        <mat-card-title>{{dish.itemName}}</mat-card-title>
-        <mat-card-subtitle *ngIf="dish.description">{{dish.description}}</mat-card-subtitle>
-        <mat-card-subtitle *ngIf="dish.price">{{dish.price | currency:'AED'}}</mat-card-subtitle>
+        <mat-card-title>{{dish.ItemName}}</mat-card-title>
+        <mat-card-subtitle *ngIf="dish.Description">{{dish.Description}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="dish.Price">{{dish.Price | currency:'AED'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <img mat-card-image class="dish-menu-img" src="{{dish.imageUri}}" alt="{{dish.itemName}}">
+        <img mat-card-image class="dish-menu-img" src="{{dish.ImageUri}}" alt="{{dish.ItemName}}">
     </mat-card-content>
     <mat-card-actions class="mat-card-actions">
         <mat-icon (click)="addToCart(dish)" color="primary">add_shopping_cart</mat-icon>

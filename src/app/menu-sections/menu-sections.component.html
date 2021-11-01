@@ -1,27 +1,37 @@
-<mat-card class="section-card" *ngFor="let section of sections">
-    <mat-card-header>
-        <mat-card-title>{{section.sectionName}}</mat-card-title>
-        <img src="{{section.logoUri}}" *ngIf="section.logoUri">
-        <i class="gg-bowl" *ngIf="!section.logoUri"></i>
-    </mat-card-header>
-    <mat-card-content>
-        <div>
-            <mat-card *ngFor="let dish of section.menuItems" class="dish-card" [routerLink]="['/item', dish.id]">
-                <mat-card-header>
-                    <mat-card-title>{{dish.itemName}}</mat-card-title>
-                    <mat-card-subtitle *ngIf="dish.description">{{dish.description}}</mat-card-subtitle>
-                    <mat-card-subtitle *ngIf="dish.price">{{dish.price | currency:'AED'}}</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <img mat-card-image class="dish-menu-img" src="{{dish.imageUri}}" alt="{{dish.itemName}}">
-                </mat-card-content>
-                <mat-card-actions class="mat-card-actions">
-                    <mat-icon (click)="addToCart(dish)" color="primary">add_shopping_cart</mat-icon>
-                </mat-card-actions>
-            </mat-card>
+<mat-accordion class="sections-accordion" multi>
+    <mat-expansion-panel *ngFor="let section of sections; let index = index" [expanded]="index === 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <img src="{{section.LogoUri}}" *ngIf="section.LogoUri">
+                <i class="gg-bowl" *ngIf="!section.LogoUri"></i>
+                &nbsp;&nbsp;
+                {{section.SectionName}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="dishes-container">
+            <div *ngFor="let dish of section.MenuItems; let index = index" class="dish-item">
+                <mat-divider *ngIf="index > 0"></mat-divider>
+                <div class="dish-image" [routerLink]="['/item', dish.Id]">
+                    <img mat-card-image src="{{dish.ImageUri}}" alt="{{dish.ItemName}}">
+                </div>
+                <div class="dish-content">
+                    <div class="dish-info" [routerLink]="['/item', dish.Id]">
+                        <div class="dish-name">
+                            {{dish.ItemName}}
+                        </div>
+                        <div class="dish-description">
+                            {{dish.Description}}
+                        </div>
+                    </div>
+                    <div class="dish-price">
+                        {{dish.Price| currency:'AED'}}
+                        <button mat-mini-fab class="btn-add-cart" color="primary" (click)="addToCart(dish)">
+                            <mat-icon>add_shopping_cart</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>View All</button>
-    </mat-card-actions>
-</mat-card>
+    </mat-expansion-panel>
+</mat-accordion>

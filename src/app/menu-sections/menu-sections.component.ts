@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ItemsService } from '../items.service';
-import { RestaurantMenuSectionItem } from '../models/restaurant-menu-section-item.model';
-import { RestaurantMenuSectionModel } from '../models/restaurant-menu-section.model';
-import { Restaurant } from '../models/restaurant.model';
-import { RestaurantResolver } from '../restaurant-seolver';
+import { CartService } from '../cart.service';
+import { MenuItem, MenuSection, Restaurant } from '../models/restaurant.model';
 
 @Component({
   selector: 'app-menu-sections',
@@ -13,11 +11,12 @@ import { RestaurantResolver } from '../restaurant-seolver';
 })
 export class MenuSectionsComponent implements OnInit {
 
-  sections: RestaurantMenuSectionModel[] = []
+  sections: MenuSection[] = []
   restaurant: Restaurant = new Restaurant();
 
   constructor(
     private itemsSerive: ItemsService,
+    private cartService: CartService,
     private activateRoute: ActivatedRoute
   ) {
     this.activateRoute.data.subscribe(data => {
@@ -29,19 +28,22 @@ export class MenuSectionsComponent implements OnInit {
     this.sections = this.getRestaurantSections();
   }
 
-  getRestaurantSections(): RestaurantMenuSectionModel[] {
-    let result: RestaurantMenuSectionModel[] = [];
-    this.restaurant.menus.forEach(menu => {
-      result = [...menu.menuSections];
-    });
+  getRestaurantSections(): MenuSection[] {
+    let result: MenuSection[] = [];
+    if (this.restaurant && this.restaurant.Menu && this.restaurant.Menu.MenuSections && this.restaurant.Menu.MenuSections.length > 0) {
+      //   this.restaurant.Menu.MenuSections.forEach(menu => {
+      //   result = [...menu.menuSections];
+      // });
+      result = this.restaurant.Menu.MenuSections;
+    }
     return result;
   }
 
-  goToDish(dish: RestaurantMenuSectionItem): void {
+  goToDish(dish: MenuItem): void {
 
   }
 
-  addToCart(dish: RestaurantMenuSectionItem): void {
-    window.alert('Dish has been added to cart!');
+  addToCart(dish: MenuItem): void {
+    this.cartService.addToCart(dish);
   }
 }
