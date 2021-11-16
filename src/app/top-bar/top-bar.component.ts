@@ -10,8 +10,8 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
-  public shoppingCartItems$: Observable<MenuItem[]> = of([]);
-  public shoppingCartItems: MenuItem[] = [];
+  shoppingCartItems$: Observable<MenuItem[]> = of([]);
+  shoppingCartItems: MenuItem[] = [];
 
   restaurant: Restaurant = new Restaurant();;
   totalCount = 0;

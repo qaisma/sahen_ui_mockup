@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiPaths } from './api-paths';
 import { environment } from '../environments/environment';
-import { MenuItem, MenuSection, Restaurant } from './models/restaurant.model';
-import { CartItem, Cart } from './models/cart.model';
+import { MenuItem, Restaurant } from './models/restaurant.model';
 import { Observable, of } from 'rxjs';
 import { localRestaurant } from './sample.data'
 
@@ -60,9 +59,9 @@ export class ItemsService {
     // }
 
 
-    getMenuSectionItem(dishId: number): MenuItem {
+    getMenuSectionItem(dishId: string): MenuItem {
         let result = new MenuItem();
-        if (dishId == -1) {
+        if (!dishId) {
             alert('invalid data!');
         } else {
             if (!this.restaurant.Menu || !this.restaurant.Menu.MenuSections) {

@@ -19,8 +19,14 @@ import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RestaurantResolver } from './restaurant-seolver';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatButtonModule} from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 
@@ -43,6 +49,11 @@ import {MatButtonModule} from '@angular/material/button';
     MatExpansionModule,
     MatBadgeModule,
     MatButtonModule,
+    MatRippleModule,
+    MatSnackBarModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

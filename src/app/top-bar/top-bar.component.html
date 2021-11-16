@@ -1,11 +1,12 @@
 <div class="toolbar" role="banner">
-  <div class="logo-container">
+  <div class="logo-container" [routerLink]="'/'">
     <img class="logo" alt="Restaurant Logo" src="{{restaurant.RestaurantChain.LogoUri}}" />
-    <span>{{restaurant.RestaurantChain.ChainName}}</span>
   </div>
+  <span class="chain-name">{{restaurant.RestaurantChain.ChainName}}</span>
   <div class="spacer"></div>
   <div class="pad-r-10">
-    <mat-icon *ngIf="shoppingCartItems$" matBadge="{{getTotalCount()}}" matBadgeColor="warn">shopping_cart
+    <mat-icon routerLink="/cart" *ngIf="shoppingCartItems$" matBadge="{{getTotalCount()}}" matBadgeColor="warn">
+      shopping_cart
     </mat-icon>
   </div>
 </div>

@@ -15,7 +15,7 @@ export class MenuSection {
 }
 
 export class MenuItem {
-    Id: number = -1;
+    Id: string = '';
     ItemName: string = '';
     Description: null | string = null;
     ImageUri: string = '';

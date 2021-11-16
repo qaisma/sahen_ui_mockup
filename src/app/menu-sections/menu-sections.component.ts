@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ItemsService } from '../items.service';
 import { CartService } from '../cart.service';
 import { MenuItem, MenuSection, Restaurant } from '../models/restaurant.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-menu-sections',
@@ -17,7 +18,8 @@ export class MenuSectionsComponent implements OnInit {
   constructor(
     private itemsSerive: ItemsService,
     private cartService: CartService,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar
   ) {
     this.activateRoute.data.subscribe(data => {
       this.restaurant = data.restaurant
@@ -45,5 +47,6 @@ export class MenuSectionsComponent implements OnInit {
 
   addToCart(dish: MenuItem): void {
     this.cartService.addToCart(dish);
+    this._snackBar.open(dish.ItemName + ' added to cart', 'Close', { duration: 3000 });
   }
 }

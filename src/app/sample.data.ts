@@ -32,7 +32,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 1,
+              Id: '1',
 
               ItemName: "ZINGER BLAZE BOX",
 
@@ -48,7 +48,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 2,
+              Id: '2',
 
               ItemName: "ZINGER BLAZE COMBO",
 
@@ -63,9 +63,6 @@ export const localRestaurant: Restaurant = {
             }
 
           ]
-
-
-
       },
 
       {
@@ -82,7 +79,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 7,
+              Id: '7',
 
               ItemName: "ZINGER BLAZE BOX",
 
@@ -98,7 +95,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 8,
+              Id: '8',
 
               ItemName: "ZINGER BLAZE COMBO",
 
@@ -114,7 +111,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 9,
+              Id: '9',
 
               ItemName: "ZINGER BLAZE",
 
@@ -129,11 +126,6 @@ export const localRestaurant: Restaurant = {
             }
 
           ]
-
-
-
-
-
       },
 
       {
@@ -150,7 +142,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 32,
+              Id: '32',
 
               ItemName: "21 PCS SUPER BUCKET",
 
@@ -166,7 +158,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 33,
+              Id: '33',
 
               ItemName: "15 PCS SUPER BUCKET",
 
@@ -182,7 +174,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 34,
+              Id: '34',
 
               ItemName: "9 PCS SUPER BUCKET",
 
@@ -198,7 +190,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 35,
+              Id: '35',
 
               ItemName: "BUCKET 21 PCS",
 
@@ -234,7 +226,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 38,
+              Id: '38',
 
               ItemName: "WAFFLE FRIES",
 
@@ -250,7 +242,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 39,
+              Id: '39',
 
               ItemName: "LOADED FRIES FAMILY",
 
@@ -266,7 +258,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 40,
+              Id: '40',
 
               ItemName: "FRIES",
 
@@ -282,7 +274,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 41,
+              Id: '41',
 
               ItemName: "SPICY FRIES",
 
@@ -298,7 +290,7 @@ export const localRestaurant: Restaurant = {
 
             {
 
-              Id: 42,
+              Id: '42',
 
               ItemName: "POP CORN CHICKEN",
               Description: null,

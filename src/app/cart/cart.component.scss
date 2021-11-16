@@ -1,0 +1,87 @@
+::ng-deep .mat-vertical-content-container {
+    margin-left: 0 !important;
+}
+
+::ng-deep .mat-vertical-content {
+    padding: 0 10px 24px 10px;
+}
+
+.full-width {
+    width: 100;
+}
+
+.dishes-container {
+    clear: both;
+    overflow: auto;
+
+    .dish-item {
+        overflow: hidden;
+        float: left;
+
+        .mat-divider {
+            margin: 10pt 0;
+        }
+
+        .dish-image {
+            width: 20%;
+            float: left;
+            text-align: center;
+            border-radius: 3px;
+            padding: 5px;
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .dish-content {
+            float: left;
+            width: 75%;
+
+            .dish-info {
+                width: 75%;
+                float: left;
+
+                .dish-name {
+                    font-weight: bold;
+                    padding-bottom: 3pt;
+                }
+
+                .dish-price {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.quantity-controls-wrapper {
+    display: block;
+    width: 100%;
+
+    .text-qty {
+        display: inline;
+        /* float   : left; */
+        width: 15%;
+        text-align: center;
+        line-height: 3em;
+    }
+
+    .btn-qty-plus {
+        color: #1e88e5;
+    }
+
+    .btn-qty-minus {
+        color: #e53935;
+    }
+}
+
+.total-price {
+    text-align: center;
+    background-color: #fdd835;
+    margin: 1em 0;
+    padding: 0.5em;
+    font-size: large;
+    border-radius: 5px;
+}

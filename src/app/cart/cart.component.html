@@ -1,1 +1,62 @@
-<p>cart works!</p>
+<mat-vertical-stepper>
+    <mat-step>
+        <ng-template matStepLabel>Customize Your Order</ng-template>
+        <div class="dishes-container">
+            <div *ngFor="let cartItem of shoppingCart.items; let index = index" class="dish-item">
+                <mat-divider *ngIf="index > 0"></mat-divider>
+                <div class="dish-image" [routerLink]="['/item', cartItem.item.Id]">
+                    <img mat-card-image src="{{cartItem.item.ImageUri}}" alt="{{cartItem.item.ItemName}}">
+                </div>
+                <div class="dish-content">
+                    <div class="dish-info" [routerLink]="['/item', cartItem.item.Id]">
+                        <div class="dish-name">
+                            {{cartItem.item.ItemName}}
+                        </div>
+                        <div class="dish-description">
+                            {{cartItem.item.Description}}
+                        </div>
+                        <div class="dish-price">
+                            {{cartItem.item.Price| currency:'AED '}}
+                        </div>
+                    </div>
+                </div>
+                <div class="order-action">
+                    <div class="quantity-controls-wrapper">
+                        <button mat-icon-button class="btn-qty-minus" (click)="decreaseQuantity(index)">
+                            <mat-icon *ngIf="cartItem.quantity == 1">delete</mat-icon>
+                            <mat-icon *ngIf="cartItem.quantity > 1">remove_circle</mat-icon>
+                        </button>
+                        <input class="text-qty" matInput value="{{cartItem.quantity}}" min="1" max="100">
+                        <button mat-icon-button class="btn-qty-plus" (click)="increaseQuantity(index)">
+                            <mat-icon>add_circle</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total-price">Subtotal: <strong>{{getTotalPrice() | currency:'AED '}}</strong></div>
+        <div>
+            <button mat-stroked-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Fill Out Your Information</ng-template>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone number</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>01XXXXXXXXXX</mat-hint>
+        </mat-form-field>
+        <div>
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-stroked-button matStepperPrevious>Back</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>

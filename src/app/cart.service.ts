@@ -41,7 +41,24 @@ export class CartService {
         return this.itemsInCartSubject;
     }
 
+    getCart(): Cart {
+        let result = new Cart();
+        this.itemsInCart.forEach(item => {
+            const foundIndex = result.items.findIndex(ci => ci.itemId == item.Id);
+            if (foundIndex >= 0) {
+                result.items[foundIndex].quantity += 1;
+            } else {
+                const cartItem = new CartItem();
+                cartItem.item = item;
+                cartItem.itemId = item.Id;
+                cartItem.quantity = 1;
+                result.items.push(cartItem);
+            }
+        });
+        return result;
+    }
+
     clearCart() {
-        this.cart.items = [];
+        this.itemsInCart = [];
     }
 }

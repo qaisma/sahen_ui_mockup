@@ -22,7 +22,7 @@ export class MenuItemComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const dishId = routeParams.get('id') || '';
 
-    this.dish = this.itemsService.getMenuSectionItem(parseInt(dishId));
+    this.dish = this.itemsService.getMenuSectionItem(dishId);
   }
 
   addToCart(dish: MenuItem): void {

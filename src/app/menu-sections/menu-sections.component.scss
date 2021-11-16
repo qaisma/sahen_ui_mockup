@@ -5,19 +5,20 @@
 .dishes-container {
     .dish-item {
         overflow: hidden;
-        float   : left;
+        float: left;
+        padding-bottom: 0.5em;
 
         .mat-divider {
             margin: 10pt 0;
         }
 
         .dish-image {
-            width        : 20%;
-            float        : left;
-            text-align   : center;
+            width: 20%;
+            float: left;
+            text-align: center;
             border-radius: 3px;
-            padding      : 5px;
-            position     : relative;
+            padding: 5px;
+            position: relative;
 
             img {
                 width: 100%;
@@ -33,25 +34,22 @@
                 float: left;
 
                 .dish-name {
-                    font-weight   : bold;
+                    font-weight: bold;
                     padding-bottom: 3pt;
                 }
             }
 
             .dish-price {
-                width     : 25%;
-                float     : left;
+                width: 25%;
+                float: left;
                 text-align: center;
+                font-weight: bold;
 
                 .btn-add-cart {
-                    position  : relative;
-                    left      : 10%;
+                    position: relative;
+                    left: 10%;
                     margin-top: 25%;
                 }
-
-                // mat-icon {
-                //     line-height: 50pt;
-                // }
             }
         }
     }

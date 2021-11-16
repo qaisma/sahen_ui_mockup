@@ -1,16 +1,15 @@
-export class CartItem {
-    itemId: string
-    quantity: number
+import { MenuItem } from "./restaurant.model";
 
-    constructor() {
-        this.itemId = ''
-        this.quantity = 0
-    }
+export class CartItem {
+    itemId: string = '';
+    item = new MenuItem();
+    quantity: number = 0;
+    message: string = '';
 }
 export class Cart {
-    items: Array<CartItem>
-
-    constructor() {
-        this.items = []
-    }
+    customerName: string = '';
+    customerPhoneNumber: string = ';'
+    customMessage: string = '';
+    tableNumber: string = '';
+    items: Array<CartItem> = [];
 }
