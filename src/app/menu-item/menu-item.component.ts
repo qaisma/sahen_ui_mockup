@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../cart.service';
 import { ItemsService } from '../items.service';
 import { MenuItem } from '../models/restaurant.model';
 
@@ -14,7 +16,9 @@ export class MenuItemComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private itemsService: ItemsService) {
+    private itemsService: ItemsService,
+    private cartService: CartService,
+    private _snackBar: MatSnackBar) {
     this.dish = new MenuItem();
   }
 
@@ -25,8 +29,10 @@ export class MenuItemComponent implements OnInit {
     this.dish = this.itemsService.getMenuSectionItem(dishId);
   }
 
+
   addToCart(dish: MenuItem): void {
-    window.alert('Dish has been added to cart!');
+    this.cartService.addToCart(dish);
+    this._snackBar.open(dish.ItemName + ' added to cart', 'Close', { duration: 3000 });
   }
 
 }

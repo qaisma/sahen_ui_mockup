@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { CartService } from '../cart.service';
 import { Cart, CartItem } from '../models/cart.model';
 
@@ -7,44 +9,42 @@ import { Cart, CartItem } from '../models/cart.model';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, AfterViewInit {
   shoppingCart = new Cart();
 
-
-  constructor(private cartService: CartService) {
-    //temp
-    if (localStorage['cart']) {
-      this.shoppingCart = JSON.parse(localStorage['cart']);
-    } else {
-
-      this.shoppingCart = this.cartService.getCart();
-      localStorage['cart'] = JSON.stringify(this.shoppingCart);
-    }
-    // this.shoppingCartItems$ = this.cartService.getItems();
-    // this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
+  constructor(private cartService: CartService,
+    private router: Router) {
   }
+
   ngOnInit(): void {
+
+    this.cartService.cart$
+      .subscribe(cart => {
+        this.shoppingCart = cart as Cart;
+      });
+  }
+
+  ngAfterViewInit(): void {
+    this.cartService.updateCart();
+    if (!this.shoppingCart.items || this.shoppingCart.items.length == 0) {
+      this.router.navigate(['/']);
+    }
   }
 
   increaseQuantity(index: number): void {
-    let cartItem = this.shoppingCart.items[index];
-    cartItem.quantity += 1;
+    this.cartService.increseQuantity(index);
   }
 
   decreaseQuantity(index: number): void {
-    let cartItem = this.shoppingCart.items[index];
-    if (cartItem.quantity == 1) {
-      this.shoppingCart.items.splice(index, 1);
-    } else {
-      cartItem.quantity -= 1;
-    }
+    this.cartService.decreseQuantity(index);
   }
 
   getTotalPrice(): number {
     let result = 0;
     this.shoppingCart.items.forEach(cartItem => {
-      result += (cartItem.item.Price + cartItem.quantity);
+      result += (cartItem.item.Price * cartItem.quantity);
     });
     return result;
   }
 }
+

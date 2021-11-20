@@ -59,7 +59,8 @@
 .quantity-controls-wrapper {
     display: block;
     width: 100%;
-
+    clear: both;
+    
     .text-qty {
         display: inline;
         /* float   : left; */

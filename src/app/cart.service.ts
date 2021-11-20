@@ -4,17 +4,21 @@ import { ApiPaths } from './api-paths';
 import { environment } from '../environments/environment';
 import { MenuItem, MenuSection, Restaurant } from './models/restaurant.model';
 import { CartItem, Cart } from './models/cart.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { createUrlResolverWithoutPackagePrefix } from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CartService {
-
+    private _cart = new ReplaySubject<Cart>();
     private itemsInCartSubject: BehaviorSubject<MenuItem[]> = new BehaviorSubject<MenuItem[]>([]);
     private itemsInCart: MenuItem[] = [];
 
-    cart: Cart = new Cart();
+    get cart$(): Observable<Cart> {
+        return this._cart.asObservable();
+    }
+
     baseUrl = environment.baseUrl;
     totalCount = 0;
 
@@ -22,26 +26,27 @@ export class CartService {
         private http: HttpClient
     ) {
         this.itemsInCartSubject.subscribe(_ => this.itemsInCart = _);
+        this.updateCart();
     }
 
     addToCart(item: MenuItem) {
         this.itemsInCartSubject.next([...this.itemsInCart, item]);
-        // let cartItem = new CartItem();
-        // cartItem.itemId = menuSectionItem.Id.toString();
-        // cartItem.quantity = 1;
-        // this.cart.items.push(cartItem);
         this.totalCount += 1;
+        this.updateCart();
     }
 
-    removeFromCart(menuSectionItem: MenuItem) {
+    removeFromCart(item: MenuItem) {
+        const index = this.itemsInCart.findIndex(i => i.Id == item.Id);
+        this.itemsInCart.splice(index, 1);
         this.totalCount -= 1;
+        this.updateCart();
     }
 
     getItems() {
         return this.itemsInCartSubject;
     }
 
-    getCart(): Cart {
+    updateCart():void {
         let result = new Cart();
         this.itemsInCart.forEach(item => {
             const foundIndex = result.items.findIndex(ci => ci.itemId == item.Id);
@@ -55,7 +60,25 @@ export class CartService {
                 result.items.push(cartItem);
             }
         });
-        return result;
+        this._cart.next(result);
+        //for http calls:
+        // .pipe(tap)
+    }
+
+    // updateCart(): void {
+    //     const cart = this.getCart();
+    //     this._cart.next(cart);
+    // }
+
+    increseQuantity(index: number): void {
+        const menuItem = this.itemsInCart[index];
+        this.itemsInCart.push(menuItem);
+        this.updateCart();
+    }
+
+    decreseQuantity(index: number): void {
+        this.itemsInCart.splice(index, 1);
+        this.updateCart();
     }
 
     clearCart() {
