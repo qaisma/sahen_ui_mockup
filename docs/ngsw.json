@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1637399270218,
-  "index": "/index.html",
+  "timestamp": 1637608440343,
+  "index": "https://qaisma.github.io/sahen_ui_mockup/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/favicon.ico",
-        "/index.html",
-        "/main.1d1dcbdbd6aeb8b6bff8.js",
-        "/manifest.webmanifest",
-        "/polyfills.d83d69cc60abc99e86ba.js",
-        "/runtime.d49afd132dc568ee52b6.js",
-        "/styles.1d6c8a3b8017c43eaeda.css"
+        "https://qaisma.github.io/sahen_ui_mockup/favicon.ico",
+        "https://qaisma.github.io/sahen_ui_mockup/index.html",
+        "https://qaisma.github.io/sahen_ui_mockup/main.1d1dcbdbd6aeb8b6bff8.js",
+        "https://qaisma.github.io/sahen_ui_mockup/manifest.webmanifest",
+        "https://qaisma.github.io/sahen_ui_mockup/polyfills.d83d69cc60abc99e86ba.js",
+        "https://qaisma.github.io/sahen_ui_mockup/runtime.d49afd132dc568ee52b6.js",
+        "https://qaisma.github.io/sahen_ui_mockup/styles.1d6c8a3b8017c43eaeda.css"
       ],
       "patterns": []
     },
@@ -29,37 +29,37 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/icon-128x128.png",
-        "/assets/icons/icon-144x144.png",
-        "/assets/icons/icon-152x152.png",
-        "/assets/icons/icon-192x192.png",
-        "/assets/icons/icon-384x384.png",
-        "/assets/icons/icon-512x512.png",
-        "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png",
-        "/assets/logo.png"
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-128x128.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-144x144.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-152x152.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-192x192.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-384x384.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-512x512.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-72x72.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-96x96.png",
+        "https://qaisma.github.io/sahen_ui_mockup/assets/logo.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/assets/logo.png": "4d8f5635163db9325a13b33de2cddee5e21c2e81",
-    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "954d66750babe5ae3ff7641faa80f063779be010",
-    "/main.1d1dcbdbd6aeb8b6bff8.js": "dc3c8c5634365ecd6a9d59fe026dad0392c334cb",
-    "/manifest.webmanifest": "c7023dcc304920fcbb1734d3c7202ced895c81fb",
-    "/polyfills.d83d69cc60abc99e86ba.js": "9df99a8b9a3edc7dcb21695cb95bcf009fa2b8d5",
-    "/runtime.d49afd132dc568ee52b6.js": "8ff24acf37e6b16e1289f7e6e887eddad295a3b6",
-    "/styles.1d6c8a3b8017c43eaeda.css": "e54ac61c318a0ee5c0f4bff47c51168ec39d35ea"
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://qaisma.github.io/sahen_ui_mockup/assets/logo.png": "4d8f5635163db9325a13b33de2cddee5e21c2e81",
+    "https://qaisma.github.io/sahen_ui_mockup/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://qaisma.github.io/sahen_ui_mockup/index.html": "22a87f6c4cf3c86292f6028829ffa4b71ab91436",
+    "https://qaisma.github.io/sahen_ui_mockup/main.1d1dcbdbd6aeb8b6bff8.js": "dc3c8c5634365ecd6a9d59fe026dad0392c334cb",
+    "https://qaisma.github.io/sahen_ui_mockup/manifest.webmanifest": "c7023dcc304920fcbb1734d3c7202ced895c81fb",
+    "https://qaisma.github.io/sahen_ui_mockup/polyfills.d83d69cc60abc99e86ba.js": "9df99a8b9a3edc7dcb21695cb95bcf009fa2b8d5",
+    "https://qaisma.github.io/sahen_ui_mockup/runtime.d49afd132dc568ee52b6.js": "8ff24acf37e6b16e1289f7e6e887eddad295a3b6",
+    "https://qaisma.github.io/sahen_ui_mockup/styles.1d6c8a3b8017c43eaeda.css": "e54ac61c318a0ee5c0f4bff47c51168ec39d35ea"
   },
   "navigationUrls": [
     {
