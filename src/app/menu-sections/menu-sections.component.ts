@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ItemsService } from '../items.service';
-import { CartService } from '../cart.service';
+import { RestaurantService } from '../services/restaurant.service';
+import { CartService } from '../services/cart.service';
 import { MenuItem, MenuSection, Restaurant } from '../models/restaurant.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -16,7 +16,7 @@ export class MenuSectionsComponent implements OnInit {
   restaurant: Restaurant = new Restaurant();
 
   constructor(
-    private itemsSerive: ItemsService,
+    private itemsSerive: RestaurantService,
     private cartService: CartService,
     private activateRoute: ActivatedRoute,
     private _snackBar: MatSnackBar
@@ -32,7 +32,7 @@ export class MenuSectionsComponent implements OnInit {
 
   getRestaurantSections(): MenuSection[] {
     let result: MenuSection[] = [];
-    if (this.restaurant && this.restaurant.Menu && this.restaurant.Menu.MenuSections && this.restaurant.Menu.MenuSections.length > 0) {
+    if (this.restaurant.Menu?.MenuSections?.length > 0) {
       //   this.restaurant.Menu.MenuSections.forEach(menu => {
       //   result = [...menu.menuSections];
       // });

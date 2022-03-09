@@ -9,8 +9,8 @@ import { environment } from '../environments/environment';
 import { MatIconModule } from '@angular/material/icon';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MenuSectionsComponent } from './menu-sections/menu-sections.component';
-import { ItemsService } from './items.service';
-import { CartService } from './cart.service';
+import { RestaurantService } from './services/restaurant.service';
+import { CartService } from './services/cart.service';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
@@ -26,6 +26,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 
@@ -36,7 +37,8 @@ import { MatInputModule } from '@angular/material/input';
     TopBarComponent,
     MenuSectionsComponent,
     MenuItemComponent,
-    CartComponent
+    CartComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,10 @@ import { MatInputModule } from '@angular/material/input';
     }),
     RouterModule.forRoot([
       {
-        path: '', component: MenuSectionsComponent,
+        path: '', component: LandingPageComponent
+      },
+      {
+        path: 'sections', component: MenuSectionsComponent,
         resolve: {
           restaurant: RestaurantResolver
         }
@@ -76,7 +81,7 @@ import { MatInputModule } from '@angular/material/input';
       }
     ])
   ],
-  providers: [ItemsService, CartService],
+  providers: [RestaurantService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

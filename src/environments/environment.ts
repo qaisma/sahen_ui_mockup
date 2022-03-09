@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://sahenapi.azurewebsites.net/api/'
+  baseUrl: 'https://sahenapi6vs20211214043052.azurewebsites.net/api/'
 };
 
 /*

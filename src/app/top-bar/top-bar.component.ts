@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService } from '../items.service';
-import { CartService } from '../cart.service';
+import { RestaurantService } from '../services/restaurant.service';
+import { CartService } from '../services/cart.service';
 import { MenuItem, Restaurant } from '../models/restaurant.model';
 import { Observable, of } from 'rxjs';
 
@@ -17,7 +17,7 @@ export class TopBarComponent implements OnInit {
   totalCount = 0;
 
   constructor(
-    private itemsService: ItemsService,
+    private restaurantService: RestaurantService,
     private cartService: CartService,
   ) {
     this.totalCount = cartService.totalCount;
@@ -27,7 +27,7 @@ export class TopBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.restaurant = this.itemsService.restaurant;
+    this.restaurant = this.restaurantService.restaurant;
   }
   getTotalCount(): number {
     return this.shoppingCartItems$ ? this.shoppingCartItems.length : 0;

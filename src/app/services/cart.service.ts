@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiPaths } from './api-paths';
-import { environment } from '../environments/environment';
-import { MenuItem, MenuSection, Restaurant } from './models/restaurant.model';
-import { CartItem, Cart } from './models/cart.model';
+import { ApiPaths } from '../api-paths';
+import { environment } from '../../environments/environment';
+import { MenuItem, MenuSection, Restaurant } from '../models/restaurant.model';
+import { CartItem, Cart } from '../models/cart.model';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
-import { createUrlResolverWithoutPackagePrefix } from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CartService {
     private _cart = new ReplaySubject<Cart>();
-    private itemsInCartSubject: BehaviorSubject<MenuItem[]> = new BehaviorSubject<MenuItem[]>([]);
-    private itemsInCart: MenuItem[] = [];
+    private _itemsInCartSubject: BehaviorSubject<MenuItem[]> = new BehaviorSubject<MenuItem[]>([]);
+    private _itemsInCart: MenuItem[] = [];
 
     get cart$(): Observable<Cart> {
         return this._cart.asObservable();
@@ -25,30 +24,30 @@ export class CartService {
     constructor(
         private http: HttpClient
     ) {
-        this.itemsInCartSubject.subscribe(_ => this.itemsInCart = _);
+        this._itemsInCartSubject.subscribe(_ => this._itemsInCart = _);
         this.updateCart();
     }
 
     addToCart(item: MenuItem) {
-        this.itemsInCartSubject.next([...this.itemsInCart, item]);
+        this._itemsInCartSubject.next([...this._itemsInCart, item]);
         this.totalCount += 1;
         this.updateCart();
     }
 
     removeFromCart(item: MenuItem) {
-        const index = this.itemsInCart.findIndex(i => i.Id == item.Id);
-        this.itemsInCart.splice(index, 1);
+        const index = this._itemsInCart.findIndex(i => i.Id == item.Id);
+        this._itemsInCart.splice(index, 1);
         this.totalCount -= 1;
         this.updateCart();
     }
 
     getItems() {
-        return this.itemsInCartSubject;
+        return this._itemsInCartSubject;
     }
 
     updateCart():void {
         let result = new Cart();
-        this.itemsInCart.forEach(item => {
+        this._itemsInCart.forEach(item => {
             const foundIndex = result.items.findIndex(ci => ci.itemId == item.Id);
             if (foundIndex >= 0) {
                 result.items[foundIndex].quantity += 1;
@@ -61,27 +60,20 @@ export class CartService {
             }
         });
         this._cart.next(result);
-        //for http calls:
-        // .pipe(tap)
     }
 
-    // updateCart(): void {
-    //     const cart = this.getCart();
-    //     this._cart.next(cart);
-    // }
-
     increseQuantity(index: number): void {
-        const menuItem = this.itemsInCart[index];
-        this.itemsInCart.push(menuItem);
+        const menuItem = this._itemsInCart[index];
+        this._itemsInCart.push(menuItem);
         this.updateCart();
     }
 
     decreseQuantity(index: number): void {
-        this.itemsInCart.splice(index, 1);
+        this._itemsInCart.splice(index, 1);
         this.updateCart();
     }
 
     clearCart() {
-        this.itemsInCart = [];
+        this._itemsInCart = [];
     }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../cart.service';
-import { ItemsService } from '../items.service';
+import { CartService } from '../services/cart.service';
+import { RestaurantService } from '../services/restaurant.service';
 import { MenuItem } from '../models/restaurant.model';
 
 @Component({
@@ -16,7 +16,7 @@ export class MenuItemComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private itemsService: ItemsService,
+    private itemsService: RestaurantService,
     private cartService: CartService,
     private _snackBar: MatSnackBar) {
     this.dish = new MenuItem();

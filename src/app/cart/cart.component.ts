@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { CartService } from '../cart.service';
+import { CartService } from '../services/cart.service';
 import { Cart, CartItem } from '../models/cart.model';
 
 @Component({
